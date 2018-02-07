@@ -12,6 +12,8 @@ bianbian::bianbian()
 	pos.y = fitY(rand);
 	v.x = fitV_x(rand);
 	v.y = fitV_y(rand);
+
+	bianbianNum ++;
 }
 
 void bianbian::move()
@@ -265,6 +267,7 @@ void bianbian::huizhi_bianbian(Graphics& gfx) const
 
 void bianbian::panduan(wanjia & a)
 {
+	//static int i = bianbianNum;//第一次运行这个函数 ， i会初始化，以后就会忽略
 	if (a.getpos().x > pos.x - 5 &&
 		a.getpos().x < pos.x + face.x + 5 &&
 		a.getpos().y > pos.y - 5 &&
@@ -272,5 +275,7 @@ void bianbian::panduan(wanjia & a)
 	{
 		chidiao = 1;
 		chiID = a.getPlayId();
+	
+		bianbianNum --;
 	}
 }

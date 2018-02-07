@@ -22,7 +22,8 @@ public:
 	void panduan(wanjia& a);//判断玩家时候与bianbian碰撞
 	bool getchidiao() const { return chidiao; }//判断玩家是否吃掉bianbian
 	int getchiID() const { return chiID; }//得到吃掉bianbian玩家的ID
-
+	int getbianbianNum() const { return bianbianNum; }//返回当前存活的 便便的总数
+	
 	static constexpr Vec2 face = { 24,24 };//静态 恒定，所有玩家一个脸
 	static constexpr Vec2 bianbian_youxia = { 799 - 24,599 - 24 };//便便在最右下的尺寸
 
@@ -38,6 +39,7 @@ private:
 	Vec2 v  ;
 	bool chidiao = 0;
 	int chiID = -1;
+	static int bianbianNum;//全员一致，而且是变量
 };
 
 

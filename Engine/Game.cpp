@@ -41,7 +41,7 @@ void Game::Go()
 	gfx.EndFrame();
 }
 
-void Game::UpdateModel()
+void Game::UpdateModel()//
 {
 	a.movePlayA(wnd.kbd);//玩家A移动
 	c.movePlayB(wnd.kbd);//玩家B移动
@@ -67,12 +67,15 @@ void Game::UpdateModel()
 void Game::ComposeFrame()
 {
 	/******判断游戏结束*****/
-	bool alldie = 1;//全消失
+	/*bool alldie = 1;//全消失
 	for (int i = 0; i < num; i++)
 	{
 		alldie = alldie && b[i].getchidiao();//两者都为1，输出才为1
 		gameend = alldie;//当bianbian都消失了，游戏结束
-	}
+	}*/
+
+	if (b[0].getbianbianNum() == 0)
+		gameend = 1;
 
 	if (gameend)//如果游戏结束
 		huizhigameover(Graphics::center.x - gameoverfenbian.x / 2, Graphics::center.y - gameoverfenbian.y / 2);//绘制gameover
@@ -89,9 +92,9 @@ void Game::ComposeFrame()
 		}
 
 		a.huizhiJifenbanA(gfx);//绘制玩家A计分板
-		c.huizhiJifenbanB(gfx);//绘制玩家B计分板
+		c.huizhiJifenbanB(gfx);//绘制玩家B计分板5555
 		a.huizhiPlayA(gfx);//绘制玩家A
-		c.huizhiPlayB(gfx);//绘制玩家B
+		c.huizhiPlayB(gfx);//绘制玩家B。。。。111
 	}
 }
 
