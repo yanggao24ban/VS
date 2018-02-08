@@ -28408,7 +28408,6 @@ private:
 	/********************************/
 	/*  User Variables              */
 	wanjia a;//生成一个玩家A
-	wanjia c;//生成一个玩家B
 	static constexpr int num = 10;//生成bianbian数量
 	bianbian b[num];//生成bianbian
 

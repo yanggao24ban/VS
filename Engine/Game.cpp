@@ -34,7 +34,7 @@ void Game::Go()
 	
 	jiancekaishi(wnd.kbd);//判断是否按下回车键
 
-	if(gamestart)//如果游戏开始了，则运算数据处理
+	if(gamestart && !gameend )//如果游戏开始了，则运算数据处理
 		UpdateModel();
 	
 	ComposeFrame();
@@ -44,12 +44,10 @@ void Game::Go()
 void Game::UpdateModel()//
 {
 	a.movePlayA(wnd.kbd);//玩家A移动
-	c.movePlayB(wnd.kbd);//玩家B移动
 	a.jiance_biankuang();//玩家A的边框检测
-	c.jiance_biankuang();//玩家B的边框检测
 	fangkuai.faguang();//方块发光
-	fangkuai.chongzhi();
-	fangkuai.panduan(a);
+	fangkuai.panduan(a);//判断玩家是否碰到方块
+	fangkuai.chongzhi();//当玩家碰到方块时候，重置方块位置
 	for (int i = 0; i < num; i++)
 	{
 		if (!b[i].getchidiao())//判断玩家与bianbian是否碰撞
@@ -57,11 +55,7 @@ void Game::UpdateModel()//
 			b[i].move();//bianbian移动
 			b[i].fantancaiqie();//bianbian反弹裁切
 			b[i].panduan(a);//bianbian判断
-			if (!b[i].getchidiao())
-				b[i].panduan(c);//bianbian判断
-			a.jifen(fangkuai);
-			//a.jifen(b[i]);//玩家a积分
-			//c.jifen(b[i]);//玩家c积分
+			a.jifen(fangkuai);//玩家积分（方块）
 		}
 	}
 }
@@ -78,8 +72,13 @@ void Game::ComposeFrame()
 		gameend = alldie;//当bianbian都消失了，游戏结束
 	}*/
 
-	if (b[0].getbianbianNum() == 0)
-		gameend = 1;
+	/*for (int i = 0; i < num; i++)
+	{
+		if (b[i].getchidiao())
+			gameend = 1;
+	}*/
+	if (b[0].getbianbianNum() != num)//当bianbian当前数量不等于总数量时候
+		gameend = 1;//游戏结束
 
 	if (gameend)//如果游戏结束
 		huizhigameover(Graphics::center.x - gameoverfenbian.x / 2, Graphics::center.y - gameoverfenbian.y / 2);//绘制gameover
@@ -91,14 +90,11 @@ void Game::ComposeFrame()
 	{
 		for (int i = 0; i < num; i++)
 		{
-			if (!b[i].getchidiao())//判断时候玩家与bianbian时候碰撞
 				b[i].huizhi_bianbian(gfx);//不碰撞的时候绘制bianbian
 		}
 
 		a.huizhiJifenbanA(gfx);//绘制玩家A计分板
-		c.huizhiJifenbanB(gfx);//绘制玩家B计分板5555
 		a.huizhiPlayA(gfx);//绘制玩家A
-		c.huizhiPlayB(gfx);//绘制玩家B。。。。111
 		fangkuai.huizhi_fangkuai(gfx);
 	}
 }

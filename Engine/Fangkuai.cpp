@@ -18,7 +18,7 @@ void fangkuai::panduan(wanjia & a)
 		a.getpos().y < pos.y + face.y + 5)
 	{
 		chidiao = 1;
-		chidaocisu++;
+		chidaocisu++;//碰到时候，吃掉次数+1
 	}
 }
 
@@ -34,26 +34,26 @@ void fangkuai::chongzhi()
 
 void fangkuai::faguang()
 {
-	static bool zengzhang = 1;
+	static bool zengzhang = 1;//1时候，数值增长
 	if (zengzhang)
 	{
 		color.SetR( color.GetR() + 1 );
 		color.SetG( color.GetG() + 2 );
 		color.SetB( color.GetB() + 2 );
-		if (color.GetR() >= 253)
-			zengzhang = 0;
+		if (color.GetR() >= 253)//当r>253时候
+			zengzhang = 0;//变为0,开始减少
 	}
 	else
 	{
 		color.SetR(color.GetR() - 1);
 		color.SetG(color.GetG() - 2);
 		color.SetB(color.GetB() - 2);
-		if (color.GetR() <= 127)
-			zengzhang = 1;
+		if (color.GetR() <= 127)//当r<=127时
+			zengzhang = 1;//变为1，开始增加
 	}
 }
 
-void fangkuai::huizhi_fangkuai(Graphics & gfx) const
+void fangkuai::huizhi_fangkuai(Graphics & gfx) const//绘制方块
 {
 	gfx.Jifenban(pos.x, pos.y, face.x, face.y,color);
 }
