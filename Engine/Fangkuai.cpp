@@ -21,6 +21,16 @@ void fangkuai::panduan(wanjia & a)
 	}
 }
 
+void fangkuai::chongzhi()
+{
+	if (chidiao)
+	{
+		pos.x = fitX(rand);
+		pos.y = fitY(rand);
+		chidiao = 0;
+	}
+}
+
 void fangkuai::faguang()
 {
 	static bool zengzhang = 1;

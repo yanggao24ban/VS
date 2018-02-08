@@ -48,6 +48,8 @@ void Game::UpdateModel()//
 	a.jiance_biankuang();//Íæ¼ÒAµÄ±ß¿ò¼ì²â
 	c.jiance_biankuang();//Íæ¼ÒBµÄ±ß¿ò¼ì²â
 	fangkuai.faguang();//·½¿é·¢¹â
+	fangkuai.chongzhi();
+	fangkuai.panduan(a);
 	for (int i = 0; i < num; i++)
 	{
 		if (!b[i].getchidiao())//ÅÐ¶ÏÍæ¼ÒÓëbianbianÊÇ·ñÅö×²
