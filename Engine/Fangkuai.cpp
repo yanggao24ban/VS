@@ -18,16 +18,17 @@ void fangkuai::panduan(wanjia & a)
 		a.getpos().y < pos.y + face.y + 5)
 	{
 		chidiao = 1;
+		chidaocisu++;
 	}
 }
 
 void fangkuai::chongzhi()
 {
-	if (chidiao)
+	if (chidiao)//如果被吃掉了
 	{
-		pos.x = fitX(rand);
+		pos.x = fitX(rand);//随机位置
 		pos.y = fitY(rand);
-		chidiao = 0;
+		chidiao = 0;//吃掉变为0
 	}
 }
 

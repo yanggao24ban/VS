@@ -4,6 +4,7 @@
 #include "Class.h"
 #include <random>
 
+class wanjia;
 
 class fangkuai
 {
@@ -13,6 +14,8 @@ public:
 	void chongzhi();//÷ÿ÷√◊¥Ã¨
 	void faguang();
 	void huizhi_fangkuai(Graphics& gfx) const;
+
+	int getchidiaocisu() const { return chidaocisu; }
 
 	static constexpr Vec2 face = { 15,15 };
 
@@ -28,5 +31,6 @@ private:
 	Color color = { 127,0,0 };
 	float a = 1;
 	bool chidiao = 0;
+	int chidaocisu = 0;
 
 };

@@ -59,8 +59,9 @@ void Game::UpdateModel()//
 			b[i].panduan(a);//bianbian判断
 			if (!b[i].getchidiao())
 				b[i].panduan(c);//bianbian判断
-			a.jifen(b[i]);//玩家a积分
-			c.jifen(b[i]);//玩家c积分
+			a.jifen(fangkuai);
+			//a.jifen(b[i]);//玩家a积分
+			//c.jifen(b[i]);//玩家c积分
 		}
 	}
 }

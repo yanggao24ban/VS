@@ -3,9 +3,11 @@
 #include "Keyboard.h"
 #include "Graphics.h"
 #include "Bianbian.h"
+#include "Fangkuai.h"
 #include <random>
 
 class bianbian;
+class fangkuai;
 
 class wanjia
 {
@@ -14,7 +16,7 @@ public:
 	void jiance_biankuang();//判断玩家移动范围
 	void movePlayA(const Keyboard& kbd);//控制玩家移动
 	void movePlayB(const Keyboard& kbd);//控制玩家移动
-	void jifen(const bianbian& bianbian);//如果吃bianbian的ID（chiID），等于我的ID，则得分
+	void jifen(const fangkuai& fangkuai);//如果吃bianbian的ID（chiID），等于我的ID，则得分
 
 	void huizhiPlayA(Graphics& gfx) const;//绘制玩家图案
 	void huizhiPlayB(Graphics& gfx) const;//绘制玩家图案

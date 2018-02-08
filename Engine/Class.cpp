@@ -44,10 +44,10 @@ void wanjia::movePlayB(const Keyboard & kbd)//控制玩家B移动
 		pos.x += v.x;
 }
 
-void wanjia::jifen(const bianbian & bianbian)//如果bianbian被吃ID与，自己玩家ID相同，则加一分
+
+void wanjia::jifen(const fangkuai & fangkuai)//如果fangkuai是否被吃ID与，吃掉了，则加一分
 {
-	if (bianbian.getchiID() == id)
-		score++;
+	score = fangkuai.getchidiaocisu();
 }
 
 void wanjia::huizhiPlayA(Graphics & gfx) const//绘制玩家A
