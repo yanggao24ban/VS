@@ -33,6 +33,8 @@ function open and close 开始于结束
 #include "Vec2.h"
 #include "Class.h"
 #include "Bianbian.h"
+#include "Fangkuai.h"
+
 
 class Game
 {
@@ -28409,6 +28411,8 @@ private:
 	wanjia c;//生成一个玩家B
 	static constexpr int num = 10;//生成bianbian数量
 	bianbian b[num];//生成bianbian
+
+	fangkuai fangkuai;
 
 	static constexpr Vec2 biaotifenbian = { 150, 175 };//标题分辨率
 	static constexpr Vec2 gameoverfenbian = { 84,64 };//gameover分辨率

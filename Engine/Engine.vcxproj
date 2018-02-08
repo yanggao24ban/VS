@@ -142,6 +142,7 @@
     <ClInclude Include="Class.h" />
     <ClInclude Include="Colors.h" />
     <ClInclude Include="DXErr.h" />
+    <ClInclude Include="Fangkuai.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Keyboard.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="Bianbian.cpp" />
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="DXErr.cpp" />
+    <ClCompile Include="Fangkuai.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Keyboard.cpp" />

@@ -47,6 +47,7 @@ void Game::UpdateModel()//
 	c.movePlayB(wnd.kbd);//玩家B移动
 	a.jiance_biankuang();//玩家A的边框检测
 	c.jiance_biankuang();//玩家B的边框检测
+	fangkuai.faguang();//方块发光
 	for (int i = 0; i < num; i++)
 	{
 		if (!b[i].getchidiao())//判断玩家与bianbian是否碰撞
@@ -95,6 +96,7 @@ void Game::ComposeFrame()
 		c.huizhiJifenbanB(gfx);//绘制玩家B计分板5555
 		a.huizhiPlayA(gfx);//绘制玩家A
 		c.huizhiPlayB(gfx);//绘制玩家B。。。。111
+		fangkuai.huizhi_fangkuai(gfx);
 	}
 }
 
